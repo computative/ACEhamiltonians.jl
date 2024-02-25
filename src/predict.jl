@@ -72,10 +72,10 @@ function wmodels2err(MWH::TBModelWhole, MWS::TBModelWhole, dat_test::Data, data_
       Strain, RMSE_S_train, RMSRE_S_train = model2valerr(getproperty(MWS,Symbol(field_name)),data_whole[i],2)
       Htest, RMSE_H_test, RMSRE_H_test = model2valerr(getproperty(MWH,Symbol(field_name)),data_test[i],1)
       Stest, RMSE_S_test, RMSRE_S_test = model2valerr(getproperty(MWS,Symbol(field_name)),data_test[i],2)
-      push!(RMSE_H_train_set, RMSE_H_train)
-      push!(RMSE_S_train_set, RMSE_S_train)
-      push!(RMSE_H_test_set, RMSE_H_test)
-      push!(RMSE_S_test_set, RMSE_S_test)
+      push!(RMSE_H_train_set, RMSRE_H_train)
+      push!(RMSE_S_train_set, RMSRE_S_train)
+      push!(RMSE_H_test_set, RMSRE_H_test)
+      push!(RMSE_S_test_set, RMSRE_S_test)
    end
 
    return [RMSE_H_train_set,RMSE_H_test_set],[RMSE_S_train_set,RMSE_S_test_set]#,[H_E_M_train[1], H_E_M_test[1]],[S_E_M_train[1], S_E_M_test[1]]

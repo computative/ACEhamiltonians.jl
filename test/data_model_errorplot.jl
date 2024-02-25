@@ -6,7 +6,7 @@ using ACEhamiltonians.Predict: predict_main, predict_offsite_HS
 using ACEhamiltonians.Dictionary: recover_at, recover_model, recover_error
 
 # Step 0. Specify training and test set
-file_name = ["ACEhamiltonians-data/training_data/BCC/SK-supercell-001.h5", "ACEhamiltonians-data/training_data/FCC/SK-supercell-002.h5"] # Specify the data file that we read
+file_name = ["../ACEhamiltonians-data/training_data/BCC/SK-supercell-001.h5", "../ACEhamiltonians-data/training_data/FCC/SK-supercell-002.h5"] # Specify the data file that we read
 index = fname2index.(file_name,1000) # Read 1000 blocks from each file specified above as the training set - 2000 data in total
 dat = Data(file_name,index)
 index_test = vec([ k for k in Iterators.product(Vector(1:20:729).+1,Vector(1:20:729).+2)]) # Specify a fixed test set
